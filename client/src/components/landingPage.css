@@ -1,0 +1,44 @@
+@import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
+
+.background {
+  background-image: url("https://i.pinimg.com/originals/24/0e/7f/240e7f147e24826d3e151acfa72309a8.gif");
+  background-size: auto;
+  overflow: hidden;
+  height: 100vh;
+}
+
+.videogame-btn {
+  --glow-color: rgb(217, 176, 255);
+  --glow-spread-color: rgba(191, 123, 255, 0.781);
+  --enhanced-glow-color: rgb(231, 206, 255);
+  --btn-color: rgb(100, 61, 136);
+  border: 0.05em solid var(--glow-color);
+  padding: 0.2em 0.9em;
+  color: var(--glow-color);
+  font-size: 35px;
+  font-weight: bold;
+  background-color: var(--btn-color);
+  border-radius: 1em;
+  outline: none;
+  box-shadow: 0 0 1em 0.25em var(--glow-color),
+    0 0 4em 1em var(--glow-spread-color),
+    inset 0 0 0.75em 0.25em var(--glow-color);
+  text-shadow: 0 0 0.5em var(--glow-color);
+  position: relative;
+  transition: all 0.3s;
+  text-align: center;
+  font-family: "VT323", monospace;
+  margin: auto;
+  margin-top: 45vh;
+  display: block;
+  width: 200px;
+  text-decoration: none;
+}
+
+.videogame-btn:hover {
+  color: var(--btn-color);
+  background-color: var(--glow-color);
+  box-shadow: 0 0 1em 0.25em var(--glow-color),
+    0 0 4em 2em var(--glow-spread-color),
+    inset 0 0 0.75em 0.25em var(--glow-color);
+}

@@ -1,0 +1,31 @@
+.form-background {
+  background-color: #e5e5e5;
+  padding: 40px;
+}
+
+.form-card {
+  border-radius: 20px;
+  background-color: #ffffff;
+  padding: 40px;
+}
+
+.form-card h1 {
+  margin-top: 0;
+}
+
+.form-card input,
+.form-card textarea {
+  border-radius: 15px;
+  border: 1px solid #c0c0c0;
+  padding: 12px;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.checkbox-container {
+  display: flex;
+}
