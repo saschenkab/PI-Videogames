@@ -32,6 +32,20 @@ const Form = () => {
     });
   };
 
+  const disableSubmitButton = () => {
+    if (
+      values.name === "" ||
+      values.description === "" ||
+      values.date === "" ||
+      genres.length === 0 ||
+      platforms.length === 0
+    ) {
+      alert("Complete the fields to continue");
+      return true;
+    }
+    return false;
+  };
+
   const handleSubmit = async (event) => {
     event.preventDefault();
 
@@ -173,7 +187,9 @@ const Form = () => {
               );
             })}
           </div>
-          <button type="submit">Create</button>
+          <button disabled={disableSubmitButton} type="submit">
+            Create
+          </button>
         </form>
       </div>
     </div>
