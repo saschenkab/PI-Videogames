@@ -18,7 +18,6 @@ const Form = () => {
     genre: [],
   });
 
-  console.log("🚀 ~ file: form.js ~ line 12 ~ Form ~ values", values);
   useEffect(() => {
     dispatch(getGenre());
     dispatch(getPlatforms());

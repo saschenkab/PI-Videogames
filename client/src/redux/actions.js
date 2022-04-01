@@ -31,10 +31,6 @@ const { REACT_APP_RAWG_KEY } = process.env;
 
 export const getVideogames = () => async (dispatch) => {
   const response = await axios.get("http://localhost:3001/videogames");
-  console.log(
-    "🚀 ~ file: actions.js ~ line 32 ~ getVideogames ~ response",
-    response
-  );
   dispatch({
     type: GET_VIDEOGAMES,
     payload: response.data,

@@ -1,5 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@300&family=Comfortaa&family=IBM+Plex+Mono:wght@300&family=VT323&display=swap");
 
+/* .game-detail-background {
+  background-image: url("https://i.pinimg.com/originals/24/0e/7f/240e7f147e24826d3e151acfa72309a8.gif");
+  background-size: auto;
+  filter: blur(8px);
+  height: 100vh;
+} */
+
 .game-detail {
   margin: 10px;
   padding: 15px;
@@ -19,14 +26,13 @@
   cursor: pointer;
   min-width: 260px;
   max-width: 700px;
-  height: 800px;
+  max-height: max-content;
+  min-height: fit-content;
   background: var(--glow-color);
   border-radius: 5px;
   border: 1px solid var(--glow-spread-color);
   transition: all 0.2s;
   box-shadow: 12px 12px 0px 1px var(--btn-color);
-  /* 12px 12px 9px 1px var(--glow-spread-color);  */
-  /* box-shadow: 12px 12px 2px 1px var(--btn-color); */
 }
 .container:hover {
   box-shadow: -12px 12px 0px -1px rgb(170, 127, 226);
@@ -39,32 +45,50 @@
 .card-link {
   text-decoration: none;
 }
-.name {
+.info-container {
   width: fit-content;
-  margin-top: 35px;
-  margin: 50px auto 0px auto;
-  padding: 4px;
+  padding: 7px;
   font-size: 18px;
-  background-clip: text;
-  color: black;
-  text-align: center;
-}
-.genreContainer {
-  margin-top: 5px;
   text-align: center;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  margin: auto;
 }
-.genre {
+
+.game-info {
   color: white;
   text-align: center;
   padding: 2px;
-  text-transform: lowercase;
   padding-right: 5px;
   padding-left: 5px;
-  font-size: 13px;
-  border-radius: 10px;
-  margin: 2px;
+  font-size: 30px;
+  border-radius: 8px;
   background-color: rgb(187, 141, 233);
+  box-shadow: 3px 3px 0px 0px var(--btn-color);
+  margin: 8px 5px;
+  text-shadow: -1px 1px 2px black;
+}
+
+.full-info-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin: auto;
+  width: fit-content;
+}
+
+.full-info {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-items: center;
+  font-size: large;
+  text-align: center;
+  font-size: 17px;
+}
+
+.info-title {
+  font-size: 20px;
+  margin: 5px;
 }

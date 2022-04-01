@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams, useNavigate } from "react-router-dom";
 import { getDetailId, clearDetail } from "../redux/actions";
@@ -8,23 +8,15 @@ import Loader from "./loader";
 const GameDetail = () => {
   const dispatch = useDispatch();
   const { id } = useParams();
-  const [path, setPath] = [];
   let navigate = useNavigate();
 
   const detail = useSelector((state) => state.gameDetail);
   let date = detail.date && detail.date.slice(0, 10);
-
-  // const handleSubmit = (event) => {
-  //   event.preventDefault();
-  //   try {
-  //     navigate("/home", { replace: true });
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
+  // console.log("🚀 ~ file: gameDetail.js ~ line 15 ~ GameDetail ~ date", date);
 
   useEffect(() => {
     dispatch(getDetailId(id));
+
     return () => dispatch(clearDetail());
   }, [dispatch, id]);
   console.log(detail);
@@ -37,20 +29,39 @@ const GameDetail = () => {
           <div className="img-container">
             <img className="img-detail" src={detail?.img} alt="game-banner" />
           </div>
-          <div className="name">
-            <h1>{detail?.name}</h1>
-            <h6>{detail?.id}</h6>
+          <div className="info-container">
+            <h1 className="game-info">{detail?.name}</h1>
+            <h6 className="game-info">{detail?.id}</h6>
           </div>
-          <div>
-            <span>Rating: {detail?.rating}</span>
-            <span>Date: {date}</span>
-            <span>Genres: {detail?.genre}</span>
-            <span>Platforms: {detail?.platforms}</span>
+          <div className="full-info-container">
+            <h6 className="info-title">
+              Rating
+              <span className="full-info">{detail?.rating}</span>
+            </h6>
+            <h6 className="info-title">
+              Released:
+              <span className="full-info">{date}</span>
+            </h6>
+            <h6 className="info-title">
+              Genres:
+              <span className="full-info">
+                {detail.genre?.map((word) => word + " ")}
+              </span>
+            </h6>
+            <h6 className="info-title">
+              platforms:
+              <span className="full-info">
+                {detail.platforms?.map((word) => word + " ")}
+              </span>
+            </h6>
             <div>
-              <p
-                className="description"
-                dangerouslySetInnerHTML={{ __html: detail?.description }}
-              />
+              <h6 className="info-title">
+                Description:
+                <span
+                  className="full-info"
+                  dangerouslySetInnerHTML={{ __html: detail?.description }}
+                />
+              </h6>
             </div>
           </div>
         </div>
